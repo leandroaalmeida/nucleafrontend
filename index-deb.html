@@ -26,6 +26,11 @@
             <span id="tokenNome">Buscando informação...</span>
             -
             <span id="tokenSimbolo">Buscando informação...</span>
+            -
+            <span id="tokenEmissor">Buscando informação...</span>
+            -
+            <span id="tokenDataEmissao">Buscando informação...</span>
+
           </h3>
           <h3>Total circulante: <span id="tokenTotalSupply">Buscando informação...</span></h3>
         </section>
@@ -145,6 +150,14 @@
         const tokenNomeObj = await contract.name();
         const tokenNome = document.getElementById("tokenNome");
         tokenNome.innerHTML = tokenNomeObj;
+
+        const tokenEmissorObj = await contract.nomeEmissor();
+        const tokenEmissor = document.getElementById("tokenEmissor");
+        tokenEmissor.innerHTML = tokenEmissorObj;
+
+        const tokenDataEmissaoObj = await contract.dataEmissao();
+        const tokenDataEmissao = document.getElementById("tokenDataEmissao");
+        tokenDataEmissao.innerHTML = tokenDataEmissaoObj;
 
         const tokenSimboloObj = await contract.symbol();
         console.log("tokenSimbolo: ", tokenSimboloObj);
