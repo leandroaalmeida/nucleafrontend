@@ -166,7 +166,7 @@
         const tokenDataEmissao = document.getElementById("tokenDataEmissao");
         tokenDataEmissao.innerHTML = tokenDataEmissaoObj;
 
-        const tokenRatingObj = await contract.rating;
+        const tokenRatingObj = await contract.rating();
         const tokenRating = document.getElementById("tokenRating");
         tokenRating.innerHTML = tokenRatingObj;
 
