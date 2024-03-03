@@ -168,7 +168,7 @@
 
         const tokenDataEmissaoObj = await contract.dataEmissao();
         const tokenDataEmissao = document.getElementById("tokenDataEmissao");
-        tokenDataEmissao.innerHTML = tokenDataEmissaoObj;
+        tokenDataEmissao.innerHTML = new Date(tokenDataEmissaoObj * 1000);
 
         const tokenRatingObj = await contract.rating();
         const tokenRating = document.getElementById("tokenRating");
