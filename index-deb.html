@@ -39,6 +39,10 @@
             Rating:
             <span id="tokenRating">Buscando informação...</span>
           </h3>
+          <h3>
+            Owner:
+            <span id="tokenOwner">Buscando informação...</span>
+          </h3>
           <h3>Total circulante: <span id="tokenTotalSupply">Buscando informação...</span></h3>
         </section>
         <hr />
@@ -169,6 +173,10 @@
         const tokenRatingObj = await contract.rating();
         const tokenRating = document.getElementById("tokenRating");
         tokenRating.innerHTML = tokenRatingObj;
+
+        const tokenOwnerObj = await contract.whoIsTheOwner();
+        const tokenOwner = document.getElementById("tokenOwner");
+        tokenOwner.innerHTML = tokenOwnerObj;
 
         const tokenSimboloObj = await contract.symbol();
         console.log("tokenSimbolo: ", tokenSimboloObj);
